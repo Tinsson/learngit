@@ -1,0 +1,51 @@
+$ mkdir somefiles		   	  创建新的空目录文件夹
+$ cd somefiles  		  	  进入这个文件夹
+$ pwd   					  显示当前目录到命令行界面
+$ git init				 	  可以把这个目录变成git 能管理的仓库
+$ Is -ah 				      可以看见.git的目录
+$ git add					  text.html 把文件添加到仓库
+$ git commit -m "里面是注释"  这里是提交到仓库并且添加说明
+$ git status 				  可以查看当前库的情况
+$ git diff 					  查看修改的内容
+$ git log					  用来查看提交的日志 从最近到最远
+$ git reset --hard HEAD^      可以回退到上一个版本 比较多的情况下用HEAD~100
+$ git reset --hard 3628164    输入commit id 去回到那个时候提交的的版本
+$ git reflog 				  记录了所有的的每一行命令
+$ cat readme.txt 			  查看当前文件内容
+$ git checkout -- readme.txt  可以丢弃工作区的修改
+$ git reset HEAD readme.txt   可以把暂存区的修改撤销并回退到工作区
+$ rm test.txt   			  用于删除文件
+$ git rm some.txt  		 	  用于删除一个文件
+$ git checkout -- some.txt    如果还没添加到最后版本库里可以恢复
+$ ssh-keygen -t rsa -C "695724046@qq.com"		创建SSH Key
+$ git remote add origin https://github.com/Tinsson/learngit.git
+$ git remote rm origin		  如果连接失败可以先打入这代码，成功跳过
+$ git push -u origin master	  把本地库上传
+$ git clone git@github.com:Tinsson/dty.git
+							  可以把远程库里的内容克隆到本地库
+$ git checkout -b dev 		  可以创建分支并切换过去相当于下面的
+$ git branch dev
+$ git checkout dev
+$ git branch				  可以查看当前分支
+在分支提交后
+$ git checkout master		  切换回master分支
+$ git merge dev				  把dev分支的工作成果合并到master分支上
+$ git branch -d dev 		  就可以删除dev分支剩下的就是master主路
+$ git log --graph			  查看分支记录
+$ git log --graph --pretty=online --abbrev-commit
+							  分支历史图
+$ git stash					  把工作现场储藏，然后恢复现场
+$ git stash pop				  这就是回到现场
+$ git branch -D feature 	  这可以把还没合并的分支强行删除
+$ git remote -v				  可以查看远程库信息
+$ git push origin branch-name 如果推送失败，先用git pull抓取远程的新提交的
+$ git tag <name>			  创建一个标签，默认为head
+$ git tag -a <name> -m "blablabl..a" 指定标签信息
+$ git tag 					  能查看所有标签
+$ git push origin <tagname>   推送一个本地标签
+$ git push origin --tags	  可以推送全部未推送过的本地标签
+$ git tag -d <tagname>		  删除一个本地标签
+$ git push origin :refs/tags/<tagname>  删除一个远程标签
+github上可以fork任意开源仓库
+然后可以在自己的仓库里读写
+然后再pull request给官方仓库贡献代码
